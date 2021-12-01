@@ -1,35 +1,36 @@
-import string
+input_lines =  [int(i) for i in open("input.txt", "r").readlines()]
 
-input_lines =  open("input.txt", "r").readlines()
-
-def part1():
+def solvePartOne():
     numberOfIncreases = 0
     prevNumber = int(input_lines[0])
+    
     for number in input_lines:
         if (int(number) > int(prevNumber)):
             numberOfIncreases += 1
+            
         prevNumber = number
 
-    print("1. Number of increases: ", numberOfIncreases)
+    return numberOfIncreases
 
-def part2():
+def solvePartTwo():
     numberOfIncreases = 0
-    prevSum = int(input_lines[0]) + int(input_lines[1]) + int(input_lines[2])
+    prevSum = input_lines[0] + input_lines[1] + input_lines[2]
+    
     for i in range(0, len(input_lines)):
-        currentNumber = int(input_lines[i])
         if len(input_lines) <= i+2:
             break
-        currentSum = int(input_lines[i]) + int(input_lines[i+1]) + int(input_lines[i+2])
+        
+        currentSum = input_lines[i] + input_lines[i+1] + input_lines[i+2]
         if currentSum > prevSum:
             numberOfIncreases += 1
 
         prevSum = currentSum
-    
-    print("2. Number of increases: ", numberOfIncreases)
+
+    return numberOfIncreases
 
 def main():
-    part1()
-    part2()
+    print(f'Part one: {solvePartOne()}')
+    print(f'Part two: {solvePartTwo()}')
 
 if __name__ == "__main__":
     main()
