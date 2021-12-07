@@ -2,4 +2,4 @@
 
 ## File structure
 
-`./init.sh [day]` to initialize a directory with intput, debug, and solution files for that given day.
+`./init.sh [day]` to initialize a directory with input, debug, and solution files for that given day.
